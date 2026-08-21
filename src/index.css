@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Playfair Display', 'Newsreader', 'Noto Serif TC', 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Inter', 'Plus Jakarta Sans', 'Noto Sans TC', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --ease-apple: cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #F8F6F1;
+    color: #1A261F;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    width: 100%;
+    min-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  /* Responsive image and media safeguard: ensure no media overflows the viewport on mobile */
+  img, svg, video, canvas, audio, iframe, embed, object {
+    max-width: 100% !important;
+    height: auto;
+    display: block;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: var(--font-serif);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  p {
+    line-height: 1.68;
+  }
+}
+
+/* Apple-style smooth cubic bezier transitions */
+.transition-smooth {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+  transition-duration: 350ms;
+}
+
+/* Tactile Physics for Interactive Elements */
+.tactile-btn {
+  transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1), 
+              box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1), 
+              background-color 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+              border-color 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+              color 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.tactile-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px -2px rgba(20, 34, 24, 0.12);
+}
+.tactile-btn:active {
+  transform: scale(0.97) translateY(0px) !important;
+  box-shadow: 0 2px 6px rgba(20, 34, 24, 0.08);
+}
+
+.tactile-card {
+  transition: transform 0.38s cubic-bezier(0.25, 1, 0.5, 1), 
+              box-shadow 0.38s cubic-bezier(0.25, 1, 0.5, 1), 
+              border-color 0.38s cubic-bezier(0.25, 1, 0.5, 1),
+              background-color 0.38s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.tactile-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px -4px rgba(20, 34, 24, 0.08);
+}
+
+.tactile-chip {
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+              background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+              border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+              color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.tactile-chip:hover {
+  transform: translateY(-2px);
+}
+.tactile-chip:active {
+  transform: scale(0.97) translateY(0);
+}
+
+/* Staggered entry animation keyframes */
+@keyframes editorialFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-stagger-header {
+  animation: editorialFadeUp 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.animate-stagger-sub {
+  animation: editorialFadeUp 0.75s cubic-bezier(0.25, 1, 0.5, 1) 0.12s forwards;
+}
+
+.animate-stagger-content {
+  animation: editorialFadeUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) 0.22s forwards;
+}
+
+/* Editorial aesthetic utilities */
+.editorial-paper-shadow {
+  box-shadow: 0 1px 2px rgba(24, 35, 28, 0.03), 0 10px 30px rgba(24, 35, 28, 0.04);
+}
+
+.editorial-divider {
+  background-image: linear-gradient(to right, transparent, #DED8CC, transparent);
+}
+
+.editorial-border {
+  border-color: #E2DCD0;
+}
+
+/* Restrained, elegant hover line */
+.editorial-link-hover {
+  position: relative;
+  transition: color 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.editorial-link-hover::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: currentColor;
+  transition: width 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.editorial-link-hover:hover::after {
+  width: 100%;
+}
+
+/* Hide scrollbar for clean horizontal pill navigation */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::selection {
+  background-color: #E2D8C6;
+  color: #16241B;
+}
+
+

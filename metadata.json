@@ -1,0 +1,8 @@
+{
+  "name": "New Charpter Ventures | Careground Innovation Platform",
+  "description": "Frontline care-grounded platform for elderly care innovation, venture testbeds, and conviction-led investment.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
