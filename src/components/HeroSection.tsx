@@ -54,48 +54,13 @@ export const HeroSection: React.FC = () => {
             </h1>
           </motion.div>
 
-          {/* Right Column: High Contrast Narrative & Action Buttons (Mobile-first layout) */}
+          {/* Right Column: Clean spacer / minimal layout without action buttons */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.75, delay: 0.14, ease: [0.25, 1, 0.5, 1] }}
-            className="lg:col-span-5 space-y-4 sm:space-y-6 lg:pl-2 flex flex-col justify-end items-start sm:items-end"
-          >
-            {/* Restrained Editorial Action Buttons aligned right */}
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-end gap-2.5 sm:gap-3.5 pt-1 w-full">
-              <button
-                id="hero-convictions-btn"
-                onClick={() => scrollToSection('convictions')}
-                className="tactile-btn w-full sm:w-auto min-h-[46px] justify-center inline-flex items-center gap-2.5 px-6 py-3.5 bg-[#142218] text-[#FAF8F5] text-xs font-mono uppercase tracking-[0.18em] hover:bg-[#25382B] group shadow-sm cursor-pointer"
-              >
-                <span>{isZh ? '核心投資理念' : 'Explore Convictions'}</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300 text-[#C86646]" />
-              </button>
-
-              <div className="flex items-center justify-end gap-2.5 w-full sm:w-auto">
-                <button
-                  id="hero-field-notes-btn"
-                  onClick={() => {
-                    setActiveTab('field-notes');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                  }}
-                  className="tactile-btn flex-1 sm:flex-initial min-h-[44px] justify-center inline-flex items-center gap-2 px-5 py-3.5 bg-[#FAF8F5] border border-[#DDD4C4] text-[#142218] text-xs font-mono uppercase tracking-[0.18em] hover:bg-[#EFEAE0] hover:border-[#142218] cursor-pointer shadow-2xs"
-                >
-                  <Compass className="w-3.5 h-3.5 text-[#C86646]" />
-                  <span>{isZh ? '筆記庫' : 'Field Notes'}</span>
-                </button>
-
-                <button
-                  id="hero-share-problem-btn"
-                  onClick={() => scrollToSection('contact')}
-                  className="tactile-btn flex-1 sm:flex-initial min-h-[44px] justify-center inline-flex items-center gap-1.5 px-4 py-3 text-[#4A5A4F] hover:text-[#142218] text-xs font-mono uppercase tracking-[0.18em] cursor-pointer"
-                >
-                  <MessageSquare className="w-3.5 h-3.5 text-[#C86646]" />
-                  <span className="editorial-link-hover">{isZh ? '對話合夥人' : 'Dialogue'}</span>
-                </button>
-              </div>
-            </div>
-          </motion.div>
+            className="lg:col-span-5 hidden lg:block"
+          />
 
         </div>
       </div>

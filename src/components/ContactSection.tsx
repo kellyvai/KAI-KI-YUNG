@@ -81,12 +81,6 @@ export const ContactSection: React.FC<{ isStandalonePage?: boolean }> = ({ isSta
               <h2 className="text-3xl sm:text-5xl font-serif text-[#142218] font-light tracking-tight leading-[1.15]">
                 {isZh ? '帶著一個真實照護問題來找我們。' : 'Bring Us A Real Care Problem.'}
               </h2>
-
-              <p className="text-xs sm:text-sm text-[#5A685E] font-sans font-light leading-[1.68]">
-                {isZh
-                  ? '無需成熟商業計劃書或精美簡報。只要你有切實的痛點洞察與現場驗證意願，我們歡迎實質探討。'
-                  : 'No pitch deck required. If you have problem clarity and frontline readiness, we welcome direct dialogue.'}
-              </p>
             </div>
 
             <div className="tactile-card bg-[#F3EFE6] border border-[#DCD4C4] rounded-sm p-5 sm:p-6 space-y-3 shadow-2xs">

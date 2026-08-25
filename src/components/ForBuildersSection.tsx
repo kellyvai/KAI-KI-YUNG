@@ -117,13 +117,6 @@ export const ForBuildersSection: React.FC<{ isStandalonePage?: boolean }> = ({ i
         <div className="space-y-8 sm:space-y-10">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-[#DDD4C4]/80">
             <div className="space-y-2">
-              <div className="inline-flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#C86646]" />
-                <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.24em] text-[#637267] font-bold">
-                  {isZh ? '02 · 希望的關注和什麼特質' : '02 · AREAS OF FOCUS & FOUNDER TRAITS'}
-                </span>
-              </div>
-
               <h2 className="text-3xl sm:text-5xl lg:text-[54px] font-serif text-[#142218] font-light tracking-tight leading-[1.08]">
                 {isZh ? '我們關注' : 'What We Focus On'}
               </h2>
@@ -173,23 +166,10 @@ export const ForBuildersSection: React.FC<{ isStandalonePage?: boolean }> = ({ i
         <div className="space-y-8 sm:space-y-10">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-4 border-b border-[#DDD4C4]/80">
             <div className="space-y-2">
-              <div className="inline-flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#142218]" />
-                <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.24em] text-[#637267] font-bold">
-                  {isZh ? '02 · 創業者特質與標準' : '02 · FOUNDER PROFILE & CRITERIA'}
-                </span>
-              </div>
-
               <h2 className="text-3xl sm:text-5xl lg:text-[54px] font-serif text-[#142218] font-light tracking-tight leading-[1.08]">
                 {isZh ? '我們尋找' : 'What We Look For'}
               </h2>
             </div>
-
-            <p className="text-xs sm:text-[13.5px] text-[#556358] font-sans max-w-md leading-[1.68] font-light">
-              {isZh
-                ? '尋找願意深入真實照護現場、具備敏捷迭代速度與多方利益相關者閉環思維的創業者。'
-                : 'Mission-driven founders with deep frontline empathy, rapid learning velocity, and multi-stakeholder execution.'}
-            </p>
           </div>
 
           {/* 5 Founder Criteria List */}

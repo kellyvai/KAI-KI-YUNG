@@ -213,13 +213,6 @@ export const OurDefinitionSection: React.FC = () => {
         ======================================================== */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-[#DDD4C4]">
           <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#C86646]" />
-              <span className="text-[10.5px] font-mono uppercase tracking-[0.25em] text-[#6A7870] font-bold">
-                {isZh ? '價值錨點 · 採用哲學' : 'VALUE ANCHOR · ADOPTION PHILOSOPHY'}
-              </span>
-            </div>
-
             <h2 className="text-3xl sm:text-5xl lg:text-[54px] font-serif text-[#142218] font-light tracking-tight leading-[1.08]">
               {isZh ? '我們的定義' : 'Our Definition'}
             </h2>
@@ -265,7 +258,7 @@ export const OurDefinitionSection: React.FC = () => {
             TAB CONTENT: EXACT SAME OUTER MASTER CARD CONTAINER
             (高度、寬度、內邊距持平對齊，切換時無跳動)
         ======================================================== */}
-        <div className="w-full relative min-h-[580px] lg:min-h-[540px]">
+        <div className="w-full relative">
           <AnimatePresence mode="wait">
             {activeModelTab === 'holistic' ? (
               /* TAB 1: HOLISTIC 4 PILLARS */
@@ -275,28 +268,12 @@ export const OurDefinitionSection: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.3 }}
-                className="w-full bg-[#FAF8F5] border border-[#DDD5C5] rounded-xs p-6 sm:p-8 lg:p-9 shadow-2xs flex flex-col justify-between space-y-6 sm:space-y-7 min-h-[580px] lg:min-h-[540px]"
+                className="w-full bg-[#FAF8F5] border border-[#DDD5C5] rounded-xs p-5 sm:p-7 shadow-2xs space-y-6"
               >
-                {/* 1. Header Bar */}
-                <div className="pb-4 border-b border-[#DDD5C5]/70 flex flex-col sm:flex-row sm:items-baseline justify-between gap-3">
-                  <div className="space-y-1">
-                    <div className="text-[10.5px] font-mono text-[#C86646] uppercase tracking-[0.2em] font-semibold">
-                      {isZh ? '全人照護 · 四維價值標準' : 'WHOLE-PERSON CARE BENCHMARK'}
-                    </div>
-                    <h3 className="text-xl sm:text-2xl font-serif text-[#142218] font-light">
-                      {isZh ? '優秀的養老，是「身 · 心 · 社 · 靈」四維的協同生長' : 'Excellence in eldercare nurtures the physical, cognitive, social, and spiritual.'}
-                    </h3>
-                  </div>
-                  <span className="text-xs font-mono text-[#7C8880] shrink-0">
-                    {isZh ? '四維協同交付' : '4-Pillar Synchronized Delivery'}
-                  </span>
-                </div>
-
-                {/* 2. Four Pillars Equal Grid Cards */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 flex-1 items-stretch">
+                {/* 1. Four Pillars Equal Grid Cards */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
                   {pillars4.map((pillar) => {
                     const Icon = pillar.icon;
-                    const isHovered = hoveredPillar === pillar.id;
 
                     return (
                       <div
@@ -322,24 +299,16 @@ export const OurDefinitionSection: React.FC = () => {
                           <div className="absolute inset-0 bg-gradient-to-t from-[#FAF8F5] via-[#FAF8F5]/80 to-[#FAF8F5]/40" />
                         </div>
 
-                        {/* Top Kanji + Meta */}
+                        {/* Top Meta */}
                         <div className="relative z-10 space-y-2 pb-3 border-b border-[#EBE4D6]">
                           <div className="flex items-start justify-between">
-                            <div className="flex items-baseline gap-2.5">
-                              <span 
-                                className="text-3xl font-serif font-medium tracking-tight leading-none"
-                                style={{ color: pillar.accent }}
-                              >
-                                {pillar.kanji}
+                            <div className="flex flex-col">
+                              <span className="text-[10px] font-mono tracking-[0.18em] uppercase text-[#7C8880] font-semibold">
+                                {pillar.num} · {pillar.en}
                               </span>
-                              <div className="flex flex-col">
-                                <span className="text-[10px] font-mono tracking-[0.18em] uppercase text-[#7C8880] font-semibold">
-                                  {pillar.num} · {pillar.en}
-                                </span>
-                                <span className="text-xs font-serif text-[#16241B] font-light">
-                                  {isZh ? pillar.subtitleZh : pillar.subtitleEn}
-                                </span>
-                              </div>
+                              <span className="text-sm font-serif text-[#16241B] font-medium">
+                                {isZh ? `${pillar.kanji} · ${pillar.subtitleZh}` : `${pillar.en} · ${pillar.subtitleEn}`}
+                              </span>
                             </div>
 
                             <div 
@@ -368,7 +337,7 @@ export const OurDefinitionSection: React.FC = () => {
                         {/* Outcome Tag */}
                         <div className="pt-2.5 border-t border-[#EBE4D6]/70 flex items-center justify-between text-[11px] font-mono">
                           <span className="text-[#7C8880] uppercase tracking-wider text-[10px]">
-                            {isZh ? '最終交付' : 'Outcome'}
+                            {isZh ? '交付成果' : 'Outcome'}
                           </span>
                           <span className="font-medium text-[#16241B] flex items-center gap-1">
                             <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: pillar.accent }} />
@@ -379,53 +348,6 @@ export const OurDefinitionSection: React.FC = () => {
                     );
                   })}
                 </div>
-
-                {/* 3. Bottom Enabler Bar */}
-                <div className="relative bg-[#EDE7DA] border border-[#D5CCA8] rounded-xs p-3.5 sm:p-4 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-3.5 overflow-hidden">
-                  <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 text-xs font-mono">
-                    <span className="text-[10px] sm:text-[10.5px] font-mono uppercase tracking-[0.2em] text-[#6A7870] font-bold shrink-0">
-                      {isZh ? '實現路徑 · 賦能底座' : 'ACHIEVED BY'}
-                    </span>
-
-                    <span className="h-3.5 w-px bg-[#C8BFAB] hidden sm:inline-block" />
-
-                    {/* Enabler 1: 科技 */}
-                    <div className="inline-flex items-center gap-1.5 bg-[#FCFBF8] border border-[#D8CFBC] px-2.5 py-1 rounded-xs shadow-3xs text-[#16241B] text-[11.5px]">
-                      <Cpu className="w-3.5 h-3.5 text-[#C86646]" />
-                      <span className="font-medium">{isZh ? '科技 (無感感知 / 外骨骼 / 零錄入)' : 'Technology'}</span>
-                    </div>
-
-                    <span className="text-[#8C9890] font-bold">+</span>
-
-                    {/* Enabler 2: 質量管理 */}
-                    <div className="inline-flex items-center gap-1.5 bg-[#FCFBF8] border border-[#D8CFBC] px-2.5 py-1 rounded-xs shadow-3xs text-[#16241B] text-[11.5px]">
-                      <ShieldCheck className="w-3.5 h-3.5 text-[#1D3B2E]" />
-                      <span className="font-medium">{isZh ? '質量管理 (臨床SOP / 風險質控)' : 'Quality Management'}</span>
-                    </div>
-
-                    <span className="text-[#C86646] font-bold">➔</span>
-
-                    {/* Core Human Touch */}
-                    <div className="inline-flex items-center gap-1.5 bg-[#16241B] text-[#FAF8F5] px-3 py-1 rounded-xs shadow-xs text-[11.5px]">
-                      <UserCheck className="w-3.5 h-3.5 text-[#C86646]" />
-                      <span className="font-serif font-medium tracking-wide">
-                        {isZh ? '賦能於人 (一線護理與家屬)' : 'Empowering Human Care'}
-                      </span>
-                    </div>
-                  </div>
-
-                  <button
-                    id="compact-care-model-learn-more-btn"
-                    onClick={() => {
-                      setActiveTab('framework');
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                    className="inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 bg-[#FCFBF8] hover:bg-[#16241B] hover:text-[#FAF8F5] text-[#16241B] border border-[#C5BCA8] hover:border-[#16241B] text-xs font-mono uppercase tracking-wider rounded-xs transition-all duration-200 cursor-pointer group shrink-0 shadow-3xs"
-                  >
-                    <span>{isZh ? '查看完整體系' : 'Explore Framework'}</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#7C8880] group-hover:text-white group-hover:translate-x-0.5 transition-all" />
-                  </button>
-                </div>
               </motion.div>
             ) : (
               /* TAB 2: TRIPARTITE TRIANGLE */
@@ -435,25 +357,10 @@ export const OurDefinitionSection: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.3 }}
-                className="w-full bg-[#FAF8F5] border border-[#DDD5C5] rounded-xs p-6 sm:p-8 lg:p-9 shadow-2xs flex flex-col justify-between space-y-6 sm:space-y-7 min-h-[580px] lg:min-h-[540px]"
+                className="w-full bg-[#FAF8F5] border border-[#DDD5C5] rounded-xs p-5 sm:p-7 shadow-2xs space-y-6"
               >
-                {/* 1. Header Bar */}
-                <div className="pb-4 border-b border-[#DDD5C5]/70 flex flex-col sm:flex-row sm:items-baseline justify-between gap-3">
-                  <div className="space-y-1">
-                    <div className="text-[10.5px] font-mono text-[#C86646] uppercase tracking-[0.2em] font-semibold">
-                      {isZh ? '落地閉環 · 三方動態平衡模型' : 'TRIPARTITE TENSION MODEL'}
-                    </div>
-                    <h3 className="text-xl sm:text-2xl font-serif text-[#142218] font-light">
-                      {isZh ? '只有三方同時點頭，科技才能在床邊生根' : 'A care technology only survives when all three sides say yes.'}
-                    </h3>
-                  </div>
-                  <span className="text-xs font-mono text-[#7C8880] shrink-0">
-                    {isZh ? '點選三角形頂點切換' : 'Click vertices to inspect'}
-                  </span>
-                </div>
-
-                {/* 2. Diagram Left + Details Right */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center flex-1">
+                {/* 1. Diagram Left + Details Right */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
                   
                   {/* LEFT (col-span-5): Geometric SVG Triangle */}
                   <div className="lg:col-span-5 flex flex-col items-center justify-center space-y-4">
@@ -592,7 +499,7 @@ export const OurDefinitionSection: React.FC = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#6A7870] font-bold block">
-                          {isZh ? '核心原則 · HARD REQUIREMENTS' : 'CORE PRINCIPLES'}
+                          {isZh ? '核心原則' : 'CORE PRINCIPLES'}
                         </span>
                         <div className="space-y-1.5">
                           {currentTrianglePillar.principles.map((p, idx) => (
@@ -606,7 +513,7 @@ export const OurDefinitionSection: React.FC = () => {
 
                       <div className="space-y-2 md:border-l md:border-[#DDD5C5]/60 md:pl-4">
                         <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#A04528] font-bold block">
-                          {isZh ? '跨維度制衡 · EQUILIBRIUM' : 'CROSS TENSIONS'}
+                          {isZh ? '跨維度制衡' : 'CROSS TENSIONS'}
                         </span>
                         <div className="space-y-1.5">
                           {currentTrianglePillar.tensions.map((t, idx) => (
@@ -622,33 +529,6 @@ export const OurDefinitionSection: React.FC = () => {
                     </div>
                   </div>
 
-                </div>
-
-                {/* 3. Bottom Equilibrium Summary Bar */}
-                <div className="relative bg-[#EDE7DA] border border-[#D5CCA8] rounded-xs p-3.5 sm:p-4 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-3.5 overflow-hidden">
-                  <div className="flex items-center gap-2.5 text-xs font-mono text-[#334237]">
-                    <span className="text-[10px] sm:text-[10.5px] font-mono uppercase tracking-[0.2em] text-[#6A7870] font-bold shrink-0">
-                      {isZh ? '採用共識 · 評估維度' : 'ADOPTION CONSENSUS'}
-                    </span>
-                    <span className="h-3.5 w-px bg-[#C8BFAB] hidden sm:inline-block" />
-                    <span className="text-xs font-serif font-light text-[#4A584F]">
-                      {isZh 
-                        ? '只有前線減負、運營合規、支付可持續三方同時閉環，科技才能被規模化採用。' 
-                        : 'Technology scales only when frontline relief, clinical workflow, and sustainable economics converge.'}
-                    </span>
-                  </div>
-
-                  <button
-                    id="triangle-model-learn-more-btn"
-                    onClick={() => {
-                      setActiveTab('framework');
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                    className="inline-flex items-center justify-center gap-1.5 px-3.5 py-1.5 bg-[#FCFBF8] hover:bg-[#16241B] hover:text-[#FAF8F5] text-[#16241B] border border-[#C5BCA8] hover:border-[#16241B] text-xs font-mono uppercase tracking-wider rounded-xs transition-all duration-200 cursor-pointer group shrink-0 shadow-3xs"
-                  >
-                    <span>{isZh ? '查看落地評估表' : 'Adoption Matrix'}</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#7C8880] group-hover:text-white group-hover:translate-x-0.5 transition-all" />
-                  </button>
                 </div>
               </motion.div>
             )}

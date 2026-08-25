@@ -81,15 +81,6 @@ export const Footer: React.FC = () => {
                 ? '從真實照護現場出發，建立對下一代銀髮科技、照護服務與商業模式的長期投資判斷。'
                 : 'Care-grounded conviction for longevity and elderly care innovation. Connecting real frontline operations with scalable technology.'}
             </p>
-
-            <div className="pt-2 text-[10px] text-[#788C80] space-y-1 font-mono border-t border-[#1F2E24]">
-              <p className="text-[#9BB0A3]">
-                {isZh ? '康和護老院 · 康和日間與復康中心 · 照護創新實體' : 'Comfort Home · Day Care · Care Innovation Hubs'}
-              </p>
-              <p>
-                {isZh ? '香港與大灣區 12 個實體運營網絡' : 'Hong Kong & GBA 12 Operating Units'}
-              </p>
-            </div>
           </div>
 
           {/* Col 2: Platform Navigation */}
@@ -159,11 +150,6 @@ export const Footer: React.FC = () => {
             {isZh
               ? `© ${new Date().getFullYear()} New Charpter Ventures · 專注銀髮科技與照護創新的實踐平台`
               : `© ${new Date().getFullYear()} New Charpter Ventures. Care-grounded conviction platform.`}
-          </p>
-          <p className="italic font-serif text-[#A2B4AA] text-xs text-center sm:text-right">
-            {isZh
-              ? '“只有融入真實動線、守護尊嚴並具備支付閉環的科技，才能在現場生根。”'
-              : '“Technology transforms care when it fits people, workflow, trust, and payment.”'}
           </p>
         </div>
       </div>

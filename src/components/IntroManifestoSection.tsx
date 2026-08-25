@@ -90,21 +90,10 @@ export const IntroManifestoSection: React.FC = () => {
               </>
             )}
           </h2>
-
-          <p className="text-sm sm:text-base text-[#4E5C52] font-serif font-light leading-relaxed max-w-3xl">
-            {isZh
-              ? '老齡化不是孤立的切片，而是一條連續演進的生命光譜。我們專注於那些打破場景孤島、重構轉折體驗、並在真實照護動線中可持續生根的創新者。'
-              : 'Aging is not an isolated silo, but an evolving spectrum of human need. We partner with founders who eliminate friction across life transitions, delivering dignified care with rigorous unit economics.'}
-          </p>
         </div>
 
         {/* The 4-Stage Continuum Architectural Rail with Photographic Depth */}
         <div className="space-y-4">
-          <div className="flex items-center justify-between text-[11px] font-mono text-[#7C8880] uppercase tracking-wider pb-2 border-b border-[#DDD5C5]/70">
-            <span>{isZh ? '連續照護譜系' : 'The Continuum Spectrum'}</span>
-            <span className="hidden sm:inline">{isZh ? '從預防到高依賴照護' : 'From Independence to High-Acuity'}</span>
-          </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {continuumStages.map((stage) => {
               const Icon = stage.icon;
@@ -163,21 +152,6 @@ export const IntroManifestoSection: React.FC = () => {
               );
             })}
           </div>
-        </div>
-
-        {/* Editorial Action Link to Next Section */}
-        <div className="pt-2 flex items-center justify-between border-t border-[#DDD5C5]/70">
-          <span className="text-[11px] font-mono text-[#7C8880] uppercase tracking-wider">
-            {isZh ? '下一步 · 了解我們的雙重基因' : 'Next · Dual-Engine Advantage'}
-          </span>
-
-          <button
-            onClick={scrollToAbout}
-            className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.16em] text-[#142218] hover:text-[#C86646] font-semibold transition-colors cursor-pointer py-1"
-          >
-            <span>{isZh ? '探索實體網絡與合夥人' : 'Meet the Team & Network'}</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </button>
         </div>
 
       </div>

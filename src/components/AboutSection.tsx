@@ -138,21 +138,9 @@ export const AboutSection: React.FC<{ isStandalonePage?: boolean }> = () => {
         
         {/* Section Header */}
         <div className="space-y-3 border-b border-[#DDD4C4] pb-6 sm:pb-8">
-          <div className="inline-flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#C86646]" />
-            <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.25em] text-[#6E7D73] font-semibold">
-              {isZh ? '01 · 我們是誰，為什麼我們' : '01 · WHO WE ARE & WHY US'}
-            </span>
-          </div>
-          
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-serif text-[#142218] font-light tracking-tight leading-[1.15]">
             {isZh ? '我們從照護內部，理解照護。' : 'We See Care From The Inside.'}
           </h2>
-          <p className="text-xs sm:text-sm md:text-[14.5px] text-[#556358] font-sans leading-[1.68] max-w-2xl font-light">
-            {isZh
-              ? '結合二級市場資本嚴謹度與 12 個實體照護場景，為創業者打通從臨床驗證到可持續規模化的完整閉環。'
-              : 'Combining institutional capital discipline with 12 frontline care settings to help founders bridge from clinical pilot to sustainable regional scale.'}
-          </p>
         </div>
 
         {/* ========================================================
@@ -227,25 +215,6 @@ export const AboutSection: React.FC<{ isStandalonePage?: boolean }> = () => {
                   <p className="text-xs sm:text-[13.5px] text-[#3E4D43] font-sans leading-relaxed font-light">
                     {isZh ? member.bio.zh : member.bio.en}
                   </p>
-
-                  {/* Operational Facilities & Domain Tags */}
-                  <div className="pt-3 border-t border-[#DDD4C4]/60 space-y-2.5">
-                    <div className="text-[11px] font-mono text-[#5A6860] flex items-center gap-1.5">
-                      <Building2 className="w-3.5 h-3.5 text-[#C86646] shrink-0" />
-                      <span className="truncate">{isZh ? member.facilities?.zh : member.facilities?.en}</span>
-                    </div>
-
-                    <div className="flex flex-wrap gap-1.5">
-                      {member.tags.slice(0, 3).map((tag, tIdx) => (
-                        <span
-                          key={tIdx}
-                          className="text-[10px] font-mono px-2.5 py-0.5 bg-[#EFEAE0] text-[#3E4E44] border border-[#DDD5C5]"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
                 </div>
               </div>
             ))}
@@ -349,11 +318,6 @@ export const AboutSection: React.FC<{ isStandalonePage?: boolean }> = () => {
                     {/* Header */}
                     <div className="relative z-10 flex items-center justify-between gap-2 pb-1.5 border-b border-current/15">
                       <div className="flex items-center gap-2 min-w-0">
-                        <span className={`text-[9.5px] font-mono font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-xs shrink-0 ${
-                          isSelected ? 'bg-[#C86646] text-[#FAF8F5]' : 'bg-[#EAE2D2] text-[#4A594E]'
-                        }`}>
-                          {node.code}
-                        </span>
                         <h4 className="text-xs sm:text-[13.5px] font-serif font-medium truncate">
                           {isZh ? node.name.zh : node.name.en}
                         </h4>

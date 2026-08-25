@@ -90,13 +90,6 @@ export const WhatWeProvideSection: React.FC<{ isStandalonePage?: boolean }> = ({
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 pb-6 border-b border-[#DDD4C4]/80">
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#C86646]" />
-              <span className="text-[10px] sm:text-[11px] font-mono uppercase tracking-[0.24em] text-[#637267] font-bold">
-                {isZh ? '03 · 我們能提供什麼' : '03 · WHAT WE PROVIDE'}
-              </span>
-            </div>
-
             <h2 className="text-3xl sm:text-5xl lg:text-[54px] font-serif text-[#142218] font-light tracking-tight leading-[1.08]">
               {isZh ? '我們能提供什麼' : 'What We Bring to Builders'}
             </h2>
@@ -160,16 +153,6 @@ export const WhatWeProvideSection: React.FC<{ isStandalonePage?: boolean }> = ({
                   <p className="text-xs sm:text-[13.5px] text-[#3E4D43] font-sans leading-[1.7] font-light">
                     {item.desc}
                   </p>
-                </div>
-
-                {/* Bullet Points */}
-                <div className="relative z-10 pt-4 border-t border-[#DDD4C4]/60 space-y-2">
-                  {item.points.map((pt, pIdx) => (
-                    <div key={pIdx} className="text-[11.5px] font-sans text-[#526258] flex items-start gap-2">
-                      <span className="text-[#C86646] font-mono select-none">—</span>
-                      <span>{pt}</span>
-                    </div>
-                  ))}
                 </div>
               </div>
             );
