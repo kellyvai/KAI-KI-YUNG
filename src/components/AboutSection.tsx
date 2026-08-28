@@ -144,14 +144,14 @@ export const AboutSection: React.FC<{ isStandalonePage?: boolean }> = () => {
         </div>
 
         {/* ========================================================
-            PART 1: PARTNERS TEAM (我們是誰 · 合夥人團隊)
+            PART 1: PARTNERS TEAM (Operators before investors.)
         ======================================================== */}
         <div className="space-y-8">
           <div className="flex items-center justify-between border-b border-[#DDD4C4]/70 pb-3">
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#142218]" />
               <h3 className="text-xs sm:text-sm font-mono uppercase tracking-[0.2em] text-[#142218] font-bold">
-                {isZh ? '我們是誰 · 核心合夥人團隊' : 'WHO WE ARE · GP PARTNERS'}
+                {isZh ? '先是一線運營者，才是投資人 · Operators before investors.' : 'Operators before investors.'}
               </h3>
             </div>
             <span className="text-[10px] sm:text-[11px] font-mono text-[#7C8880] tracking-[0.15em] uppercase">

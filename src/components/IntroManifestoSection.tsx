@@ -82,11 +82,11 @@ export const IntroManifestoSection: React.FC = () => {
               <>
                 我們投資那些能陪伴長者與家庭，
                 <br className="hidden sm:inline" />
-                走過從<span className="italic font-normal text-[#C86646]">居家自理</span>到<span className="italic font-normal text-[#C86646]">專業院舍</span>全譜系過渡的定義者。
+                走過從<span className="font-normal text-[#C86646]">居家自理</span>到<span className="font-normal text-[#C86646]">專業院舍</span>全譜系過渡的定義者。
               </>
             ) : (
               <>
-                We back the category-defining companies navigating the critical transitions across the <span className="italic font-normal text-[#C86646]">full continuum of care</span>.
+                We back the category-defining companies navigating the critical transitions across the <span className="font-normal text-[#C86646]">full continuum of care</span>.
               </>
             )}
           </h2>

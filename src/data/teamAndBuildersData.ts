@@ -6,14 +6,14 @@ export const teamData: TeamMember[] = [
   {
     name: 'Stephen Wan',
     role: {
-      en: 'Residential Operations & Clinical Value',
-      zh: '院舍運營與臨床價值'
+      en: 'Residential Operations & Care Quality',
+      zh: '院舍運營與照護品質'
     },
     avatar: stephenAvatar,
     linkedin: 'https://www.linkedin.com/in/stephen-wan-9928a7/',
     bio: {
-      en: 'Directs Comfort Home residential and rehab facilities across Hong Kong. Former public equities research analyst bringing institutional rigor into statutory licensing, 24/7 night workflows, and multidisciplinary care.',
-      zh: '領導香港 Comfort Home 安老院舍及復康中心體系。前二級市場股票分析師，將資本嚴謹度帶入牌照合規、夜班動線優化及跨學科一線照護實踐。'
+      en: 'Stephen Wan is an elderly-care operator and former equity analyst. He leads Comfort Home for the Elderly and Comfort Rehabilitation Home in Hong Kong, focusing on care quality, ESG integration, and sustainable operations. He holds a BA in Economics from Cornell University and an MPA from the London School of Economics. Stephen combines hands-on care delivery experience with deep insight into clinical standards, facility procurement, and payer economics.',
+      zh: 'Stephen Wan 是安老照護運營者與前股票研究分析師。他領導香港 Comfort Home 安老院舍及 Comfort 復康中心體系，專注於照護質素、ESG 整合與可持續運營。他持有康奈爾大學經濟學學士及倫敦政經學院公共政策碩士學位。Stephen 將一線照護交付經驗與對運營、品質標準及價值創造的洞察緊密結合，深諳大型院舍採購流程與支付邏輯。'
     },
     tags: ['Care Quality', 'Residential Ops', 'Licensing & Compliance', 'Clinical Value', 'Night Shifts'],
     facilities: {
@@ -34,8 +34,8 @@ export const teamData: TeamMember[] = [
     avatar: jordanAvatar,
     linkedin: 'https://www.linkedin.com/in/jordanyeng/',
     bio: {
-      en: 'Founding Partner of New Chapter Ventures. Seasoned US/Asia strategist specializing in pricing, M&A, and tech-enabled care pilots across day care, home health, and community rehab units.',
-      zh: 'New Chapter Ventures 創始合夥人。具備跨美亞戰略定價、並購及物聯網照護經驗，主導日間照護、居家外展及復康站點的技術試驗與規模化落地。'
+      en: 'Jordan Yeng is the founder of Silvermorph and Silvermorph Tech, with leadership across residential care, community hubs, and tech-enabled care services. Across Asia and the US, he developed extensive experience in pricing strategy, M&A, and scalable operations. He holds an MS in Engineering from the University of Minnesota and an MBA from Cornell University. Jordan applies a practical operator lens to assess genuine elder value, commercial viability, and scalable care innovation.',
+      zh: 'Jordan Yeng 是 Silvermorph 及 Silvermorph Tech 創始人，在院舍照護、社區日間照護及科技照護領域擁有深厚運營領導經驗。深耕安老產業前後，他積累了跨美亞兩地的戰略定價、並購與運營管理經驗。他持有明尼蘇達大學工程碩士及康奈爾大學工商管理碩士學位。Jordan 能以務實視角評估解決方案能否為長者創造真實價值，並推動規模化落地與模式創新。'
     },
     tags: ['Care Innovation', 'Pricing & M&A', 'Community Care', 'Regional Scale', 'Payer Models'],
     facilities: {

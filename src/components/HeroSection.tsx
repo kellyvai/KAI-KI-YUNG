@@ -42,13 +42,13 @@ export const HeroSection: React.FC = () => {
                 <>
                   <span className="block">投資高齡化社會的</span>
                   <span className="block font-serif font-normal">
-                    <span className="text-[#C86646] italic font-serif">未來領袖</span>。
+                    <span className="text-[#C86646] font-serif">未來領袖</span>。
                   </span>
                 </>
               ) : (
                 <>
                   <span>Backing the next generation for an </span>
-                  <span className="text-[#C86646] italic font-serif">aging world.</span>
+                  <span className="text-[#C86646] font-serif">aging world.</span>
                 </>
               )}
             </h1>
