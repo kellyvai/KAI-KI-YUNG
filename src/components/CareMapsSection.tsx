@@ -277,10 +277,10 @@ export const CareMapsSection: React.FC<{ isStandalonePage?: boolean }> = ({ isSt
         ======================================================== */}
         <div className="space-y-4">
           
-          {/* ① 4 Care Stages along the life continuum */}
+          {/* 4 Care Stages along the life continuum */}
           <div className="space-y-2">
             <div className="flex items-center justify-between text-[11px] font-mono text-[#7C8880] uppercase tracking-wider">
-              <span>{isZh ? '① 長者生命週期 4 大物理動線 (點擊切換)' : '① 4 LIFE-CYCLE CARE STAGES'}</span>
+              <span>{isZh ? '長者生命週期 4 大物理動線' : '4 LIFE-CYCLE CARE STAGES'}</span>
               <span className="hidden sm:inline text-[10px] text-[#A04528] font-bold">
                 {isZh ? '← 輕度自理 · · · · · · · · · · · · · · · · · · 重度托底 →' : '← MILD · · · · · · · · · · · · · · · · · INTENSIVE →'}
               </span>
@@ -337,55 +337,6 @@ export const CareMapsSection: React.FC<{ isStandalonePage?: boolean }> = ({ isSt
               })}
             </div>
           </div>
-
-          {/* ② 2 Cross-Cutting Systemic Enablers */}
-          <div className="pt-2 border-t border-[#DDD4C4]/60">
-            <div className="flex items-center justify-between text-[11px] font-mono text-[#7C8880] uppercase tracking-wider mb-2">
-              <span>{isZh ? '② 貫穿全場景的 2 大底層支撐體系 (護理人力 & 採購資助)' : '② CROSS-CUTTING SYSTEMIC PILLARS'}</span>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {crossCuttingPillars.map((pillar) => {
-                const Icon = pillar.icon;
-                const isActive = activeStageId === pillar.id;
-
-                return (
-                  <button
-                    key={pillar.id}
-                    onClick={() => setActiveStageId(pillar.id)}
-                    className={`text-left p-3.5 rounded-xs border transition-all duration-200 cursor-pointer flex items-center justify-between gap-4 group ${
-                      isActive
-                        ? 'bg-[#142218] text-[#FAF8F5] border-[#142218] shadow-md'
-                        : 'bg-[#FAF8F5] text-[#142218] border-[#DDD5C5] hover:border-[#142218]/40 hover:bg-[#F3EFE6]'
-                    }`}
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className={`w-8 h-8 rounded-xs flex items-center justify-center shrink-0 border ${
-                        isActive ? 'bg-[#243528] border-[#344638] text-[#C86646]' : 'bg-[#EFEAE0] border-[#DDD5C5] text-[#142218]'
-                      }`}>
-                        <Icon className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <div className="flex items-center gap-2">
-                          <span className="text-sm font-serif font-normal">{pillar.title}</span>
-                          <span className={`text-[9.5px] font-mono px-1.5 py-0.2 rounded-xs ${
-                            isActive ? 'bg-[#243528] text-[#C86646]' : 'bg-[#EAE5DA] text-[#6A7870]'
-                          }`}>
-                            {pillar.tag}
-                          </span>
-                        </div>
-                        <p className={`text-xs font-sans font-light ${isActive ? 'text-[#C5D0C8]' : 'text-[#6E7D73]'}`}>
-                          {pillar.subtitle}
-                        </p>
-                      </div>
-                    </div>
-
-                    <ArrowRight className={`w-4 h-4 shrink-0 transition-transform ${isActive ? 'text-[#C86646] translate-x-1' : 'text-[#8A958E] group-hover:text-[#142218]'}`} />
-                  </button>
-                );
-              })}
-            </div>
-          </div>
         </div>
 
         {/* ========================================================
@@ -418,14 +369,6 @@ export const CareMapsSection: React.FC<{ isStandalonePage?: boolean }> = ({ isSt
                     {isZh ? currentCareMap.subtitle.zh : currentCareMap.subtitle.en}
                   </p>
                 </div>
-
-                <button
-                  onClick={() => setSelectedCareMap(currentCareMap)}
-                  className="tactile-btn inline-flex items-center gap-2 px-4 py-2.5 bg-[#142218] text-[#FAF8F5] text-xs font-mono uppercase tracking-wider rounded-xs hover:bg-[#283C30] cursor-pointer shrink-0 self-start sm:self-auto"
-                >
-                  <span>{isZh ? '展開完整場景白皮書' : 'Full Whitepaper'}</span>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-[#C86646]" />
-                </button>
               </div>
 
               {/* Transition Trigger Box (if life-cycle stage) */}
@@ -640,17 +583,11 @@ export const CareMapsSection: React.FC<{ isStandalonePage?: boolean }> = ({ isSt
                 </div>
               </div>
 
-              {/* Bottom Whitepaper Action */}
+              {/* Bottom Insight Note */}
               <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-[#DDD4C4]/60">
                 <span className="text-xs font-mono text-[#7C8880]">
-                  {isZh ? '想看該場景的完整驗證數據與白皮書？' : 'Explore full testbed metrics and complete whitepaper:'}
+                  {isZh ? '所有洞察均來自 12 個實體養老節點一線真實驗證' : 'All insights validated across 12 frontline care nodes'}
                 </span>
-                <button
-                  onClick={() => setSelectedCareMap(currentCareMap)}
-                  className="inline-flex items-center gap-2 text-xs font-mono text-[#142218] hover:text-[#C86646] font-bold uppercase tracking-wider cursor-pointer"
-                >
-                  <span>{isZh ? '展開完整場景白皮書 →' : 'Read Field Dossier →'}</span>
-                </button>
               </div>
             </motion.div>
           )}

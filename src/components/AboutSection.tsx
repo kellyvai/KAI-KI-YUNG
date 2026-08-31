@@ -282,8 +282,8 @@ export const AboutSection: React.FC<{ isStandalonePage?: boolean }> = () => {
           {/* Main Interactive Grid: Left 4 Node Cards (5 cols) + Right Topology Map (7 cols) - scaled down */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch pt-1">
             
-            {/* Left Column: 4 Care Node Cards - compact and refined */}
-            <div className="lg:col-span-5 flex flex-col justify-between gap-2">
+            {/* Left Column: 4 Care Node Cards - horizontal snap on mobile, vertical stack on desktop */}
+            <div className="lg:col-span-5 flex flex-row lg:flex-col overflow-x-auto lg:overflow-x-visible snap-x snap-mandatory gap-2.5 pb-2 -mx-5 px-5 lg:mx-0 lg:px-0 no-scrollbar justify-start lg:justify-between">
               {NETWORK_NODES.map((node) => {
                 const isSelected = selectedNodeId === node.id;
                 const IconComponent = node.icon;
@@ -291,7 +291,7 @@ export const AboutSection: React.FC<{ isStandalonePage?: boolean }> = () => {
                   <button
                     key={node.id}
                     onClick={() => setSelectedNodeId(node.id)}
-                    className={`p-3.5 rounded-xs border text-left transition-all duration-300 cursor-pointer flex flex-col justify-between relative overflow-hidden group ${
+                    className={`w-[78vw] sm:w-[300px] lg:w-full shrink-0 snap-start p-3.5 rounded-xs border text-left transition-all duration-300 cursor-pointer flex flex-col justify-between relative overflow-hidden group ${
                       isSelected
                         ? 'bg-[#142218] text-[#FAF8F5] border-[#142218] shadow-md'
                         : 'bg-[#FAF8F5] text-[#142218] border-[#DDD5C5] hover:border-[#142218]'
@@ -316,20 +316,14 @@ export const AboutSection: React.FC<{ isStandalonePage?: boolean }> = () => {
                     )}
 
                     {/* Header */}
-                    <div className="relative z-10 flex items-center justify-between gap-2 pb-1.5 border-b border-current/15">
-                      <div className="flex items-center gap-2 min-w-0">
-                        <h4 className="text-xs sm:text-[13.5px] font-serif font-medium truncate">
-                          {isZh ? node.name.zh : node.name.en}
-                        </h4>
-                      </div>
-
-                      <span className={`text-[9.5px] font-mono shrink-0 ${isSelected ? 'text-[#D0DDD4]' : 'text-[#6A7870]'}`}>
-                        {isZh ? node.stats.zh.split('·')[0] : node.stats.en.split('·')[0]}
-                      </span>
+                    <div className="relative z-10 pb-1.5 border-b border-current/15">
+                      <h4 className="text-xs sm:text-[13.5px] font-serif font-medium truncate">
+                        {isZh ? node.name.zh : node.name.en}
+                      </h4>
                     </div>
 
                     {/* Scope & Focus Description */}
-                    <p className={`relative z-10 text-[11px] sm:text-xs font-sans mt-2 leading-relaxed font-light ${
+                    <p className={`relative z-10 text-[11px] sm:text-xs font-sans mt-2 leading-relaxed font-light line-clamp-2 lg:line-clamp-none ${
                       isSelected ? 'text-[#D8E4DC]' : 'text-[#4F5E54]'
                     }`}>
                       {isZh ? node.scope.zh : node.scope.en}
